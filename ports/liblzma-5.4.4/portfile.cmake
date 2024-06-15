@@ -1,15 +1,15 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO tukaani-project/xz
-    # REF "v${VERSION}"
-    REF 2178acf8a4d40a93e970cfcf9b807d5ef6c8da92
-    SHA512 8b56935696535554b4533f249112b419d7ce6accca5bc94a2970e1978758728943c69ba2507735319884f47bc95d14e0bcb8016e51653d8acb87c1496cb852b4
+    # REPO tukaani-project/xz
+    REPO bminor/xz
+    REF "v${VERSION}"
+    SHA512 c28461123562564e030f3f733f078bc4c840e87598d9f4b718d4bca639120d8133f969c45d7bdc62f33f081d789ec0f14a1791fb7da18515682bfe3c0c7362e0
     HEAD_REF master
     PATCHES
         fix_config_include.patch
-        # win_output_name.patch # Fix output name on Windows. Autotool build does not generate lib prefixed libraries on windows. 
+        win_output_name.patch # Fix output name on Windows. Autotool build does not generate lib prefixed libraries on windows. 
         add_support_ios.patch # add install bundle info for support ios 
-        # build-tools.patch
+        build-tools.patch
 )
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
@@ -20,8 +20,6 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
 if(VCPKG_TARGET_ARCHITECTURE STREQUAL "wasm32")
     set(WASM_OPTIONS -DCMAKE_C_BYTE_ORDER=LITTLE_ENDIAN -DCMAKE_CXX_BYTE_ORDER=LITTLE_ENDIAN)
 endif()
-
-set(VCPKG_POLICY_ALLOW_EXES_IN_BIN enabled)
 
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
