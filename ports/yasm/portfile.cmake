@@ -2,9 +2,11 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO yasm/yasm
     # REF 009450c7ad4d425fa5a10ac4bd6efbd25248d823 # 1.3.0 plus bugfixes for https://github.com/yasm/yasm/issues/153
-    REF 121ab150b3577b666c79a79f4a511798d7ad2432 # 1.3.0 plus bugfixes to include https://github.com/yasm/yasm/issues/263
+    # REF 121ab150b3577b666c79a79f4a511798d7ad2432 # 1.3.0 plus bugfixes to include https://github.com/yasm/yasm/issues/263
+    REF a2f8bdf075bcad90a1b0a446080906ef6afe6847 # 1.3.0 plus bugfixes to include https://github.com/yasm/yasm/issues/289
     # SHA512 a542577558676d11b52981925ea6219bffe699faa1682c033b33b7534f5a0dfe9f29c56b32076b68c48f65e0aef7c451be3a3af804c52caa4d4357de4caad83c
-    SHA512 e005153fc14b2131c828848a4026ad7f7982ac611bc0848c6cf2cb4fdeeed91efcffde9b4a6dc4e968f32afff4517620b5157b1cefe418366200bcb05e839b81
+    #SHA512 e005153fc14b2131c828848a4026ad7f7982ac611bc0848c6cf2cb4fdeeed91efcffde9b4a6dc4e968f32afff4517620b5157b1cefe418366200bcb05e839b81
+    SHA512 dcbcc6106a91bb6c6644cb93c0af75b611db7d73d39e1bc24839cd242ca77f2d726d1d7e7c55fc7b123387b0d07edae273e0939235a1c4a9eba92e395d8ef709
     HEAD_REF master
     PATCHES
         add-feature-tools.patch
