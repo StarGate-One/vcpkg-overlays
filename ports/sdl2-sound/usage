@@ -1,4 +1,0 @@
-sdl2-sound provides CMake targets:
-
-    find_package(SDL2_sound CONFIG REQUIRED)
-    target_link_libraries(main PRIVATE $<IF:$<TARGET_EXISTS:SDL2_sound::SDL2_sound>,SDL2_sound::SDL2_sound,SDL2_sound::SDL2_sound-static>)
