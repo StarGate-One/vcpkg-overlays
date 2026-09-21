@@ -1,0 +1,27 @@
+diff --git a/include/compat/msvc/stdatomic.h b/include/compat/msvc/stdatomic.h
+index 618f0ee..1f5ef1a 100644
+--- a/include/compat/msvc/stdatomic.h
++++ b/include/compat/msvc/stdatomic.h
+@@ -32,10 +32,10 @@
+ #pragma warning(push)
+ #pragma warning(disable:4067)    /* newline for __has_include_next */
+ 
+-#if defined(__clang__) && __has_include_next(<stdatomic.h>)
++/* #if defined(__clang__) && __has_include_next(<stdatomic.h>) */
+    /* use the clang stdatomic.h with clang-cl*/
+-#  include_next <stdatomic.h>
+-#else /* ! stdatomic.h */
++/* #  include_next <stdatomic.h> */
++/* #else */ /* ! stdatomic.h */
+ 
+ #include <windows.h>
+ 
+@@ -73,7 +73,7 @@ static inline int atomic_compare_exchange_strong_int(LONG *obj, LONG *expected,
+ #define atomic_fetch_or(p_a, v)       InterlockedOr(p_a, v)
+ #define atomic_fetch_add_explicit(p_a, inc, mo) atomic_fetch_add(p_a, inc)
+ 
+-#endif /* ! stdatomic.h */
++/* #endif */ /* ! stdatomic.h */
+ 
+ #pragma warning(pop)
+ 
